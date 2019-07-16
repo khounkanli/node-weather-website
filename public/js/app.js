@@ -1,5 +1,4 @@
- console.log('Clients site javascrip file is loading! Please wait until it is completed!')
-
+//console.log('Clients site javascrip file is loading! Please wait until it is completed!')
 
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
