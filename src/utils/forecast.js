@@ -2,7 +2,7 @@
 const request = require('request')
 
 const forecast = (latitude,longitude, callback) => {
-    const url = 'https://api.darksky.net/forecast/cad9dd0066c061e07e058e4c4059af65/'+encodeURIComponent(latitude)+','+encodeURIComponent(longitude)+''
+    const url = 'https://api.darksky.net/forecast/cad9dd0066c061e07e058e4c4059af65/'+encodeURIComponent(latitude)+','+encodeURIComponent(longitude)+'?units=auto'
     request({url, json: true}, (error, {body}) => {
         if(error){
             callback('Unable to connect to weather service!', undefined)
@@ -12,7 +12,7 @@ const forecast = (latitude,longitude, callback) => {
             const data = body.daily.data[0].summary + ' It is currently ' +
             body.currently.temperature + ' degrees out.'+ ' The higher temperature today is '+
             body.daily.data[0].temperatureHigh +' degres, with a lower of '+
-            body.daily.data[0].temperatureLow +' There is a ' +
+            body.daily.data[0].temperatureLow +'. There is a ' +
             body.currently.precipProbability + '% chance of rain.'
             // const data = {
             //     timeZone: body.timezone,
