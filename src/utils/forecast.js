@@ -10,7 +10,9 @@ const forecast = (latitude,longitude, callback) => {
             callback(body.error, undefined)
         } else {
             const data = body.daily.data[0].summary + ' It is currently ' +
-            body.currently.temperature + ' degrees out. There is a ' +
+            body.currently.temperature + ' degrees out.'+ ' The higher temperature today is '+
+            body.daily.data[0].temperatureHigh +' degres, with a lower of '+
+            body.daily.data[0].temperatureLow +' There is a ' +
             body.currently.precipProbability + '% chance of rain.'
             // const data = {
             //     timeZone: body.timezone,
