@@ -14,12 +14,7 @@ const forecast = (latitude,longitude, callback) => {
             body.daily.data[0].temperatureHigh +' degres, with a lower of '+
             body.daily.data[0].temperatureLow +'. There is a ' +
             body.currently.precipProbability + '% chance of rain.'
-            // const data = {
-            //     timeZone: body.timezone,
-            //     summary: body.hourly.summary,
-            //     lowTemperature: body.daily.data[0].temperatureLow,
-            //     highTemperature: body.daily.data[0].temperatureHigh
-            // }
+            
             callback(undefined, data)
         }
     })
